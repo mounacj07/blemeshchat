@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/layout_item_chat_sent.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/layout/item_chat_sent.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/drawable_bg_chat_input.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/drawable/bg_chat_input.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/layout_item_device.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/layout/item_device.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/font_montserrat_medium.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/font/montserrat_medium.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/layout_activity_login.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/font_montserrat.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/font/montserrat.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/anim_slide_up_fade_in.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/anim/slide_up_fade_in.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/drawable_bg_chat_sent.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/drawable/bg_chat_sent.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/layout_activity_main.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/font_poppins_medium.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/font/poppins_medium.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/drawable_bg_chat_received.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/drawable/bg_chat_received.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/layout_activity_device_list.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/layout/activity_device_list.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/layout_item_chat_received.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/layout/item_chat_received.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/font_poppins.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/font/poppins.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-merged_res-4:/layout_activity_setup.xml.flat",
+        "source": "com.example.meshchat.app-main-6:/layout/activity_setup.xml"
+    }
+]

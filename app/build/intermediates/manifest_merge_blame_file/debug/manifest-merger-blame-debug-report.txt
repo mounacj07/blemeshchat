@@ -1,0 +1,224 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.meshchat"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <!-- Legacy Bluetooth permissions for Android 11 and lower -->
+12    <uses-permission
+12-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:6:5-95
+13        android:name="android.permission.BLUETOOTH"
+13-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:6:22-65
+14        android:maxSdkVersion="30" />
+14-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:6:66-92
+15    <uses-permission
+15-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:7:5-101
+16        android:name="android.permission.BLUETOOTH_ADMIN"
+16-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:7:22-71
+17        android:maxSdkVersion="30" />
+17-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:7:72-98
+18
+19    <!--
+20         ACCESS_FINE_LOCATION is required for BLE scanning on all versions.
+21         ACCESS_BACKGROUND_LOCATION is a critical signal to the OS on modern Android
+22         versions that the app needs to receive scan results reliably, even when running
+23         as a foreground service. Its presence is required for robust scanning on many
+24         device models.
+25    -->
+26    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+26-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:16:5-79
+26-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:16:22-76
+27    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+27-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:17:5-85
+27-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:17:22-82
+28
+29    <!-- Needed for Android 12+ -->
+30    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+30-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:20:5-73
+30-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:20:22-70
+31    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+31-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:21:5-78
+31-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:21:22-75
+32    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+32-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:22:5-76
+32-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:22:22-73
+33
+34    <!-- Common permissions -->
+35    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+35-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:25:5-77
+35-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:25:22-74
+36    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+36-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:26:5-77
+36-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:26:22-74
+37    <uses-permission android:name="android.permission.VIBRATE" />
+37-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:27:5-66
+37-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:27:22-63
+38
+39    <uses-feature
+39-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:29:5-89
+40        android:name="android.hardware.bluetooth_le"
+40-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:29:19-63
+41        android:required="true" />
+41-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:29:64-87
+42
+43    <permission
+43-->[androidx.core:core:1.10.1] C:\Users\mouna\.gradle\caches\transforms-3\5ebfcb288b94bc8d2a91970385f690cb\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+44        android:name="com.example.meshchat.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+44-->[androidx.core:core:1.10.1] C:\Users\mouna\.gradle\caches\transforms-3\5ebfcb288b94bc8d2a91970385f690cb\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+45        android:protectionLevel="signature" />
+45-->[androidx.core:core:1.10.1] C:\Users\mouna\.gradle\caches\transforms-3\5ebfcb288b94bc8d2a91970385f690cb\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+46
+47    <uses-permission android:name="com.example.meshchat.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+47-->[androidx.core:core:1.10.1] C:\Users\mouna\.gradle\caches\transforms-3\5ebfcb288b94bc8d2a91970385f690cb\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+47-->[androidx.core:core:1.10.1] C:\Users\mouna\.gradle\caches\transforms-3\5ebfcb288b94bc8d2a91970385f690cb\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+48
+49    <application
+49-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:31:5-52:19
+50        android:allowBackup="true"
+50-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:32:9-35
+51        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+51-->[androidx.core:core:1.10.1] C:\Users\mouna\.gradle\caches\transforms-3\5ebfcb288b94bc8d2a91970385f690cb\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+52        android:debuggable="true"
+53        android:extractNativeLibs="false"
+54        android:label="@string/app_name"
+54-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:33:9-41
+55        android:supportsRtl="true"
+55-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:34:9-35
+56        android:testOnly="true"
+57        android:theme="@style/Theme.BleMeshChat" >
+57-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:35:9-49
+58        <meta-data
+58-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:37:9-95
+59            android:name="preloaded_fonts"
+59-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:37:20-50
+60            android:resource="@array/preloaded_fonts" />
+60-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:37:51-92
+61
+62        <activity
+62-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:39:9-46:20
+63            android:name="com.example.meshchat.LoginActivity"
+63-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:40:13-42
+64            android:exported="true" >
+64-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:41:13-36
+65            <intent-filter>
+65-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:42:13-45:29
+66                <action android:name="android.intent.action.MAIN" />
+66-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:43:17-69
+66-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:43:25-66
+67
+68                <category android:name="android.intent.category.LAUNCHER" />
+68-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:44:17-77
+68-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:44:27-74
+69            </intent-filter>
+70        </activity>
+71        <activity android:name="com.example.meshchat.ui.DeviceListActivity" />
+71-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:47:9-59
+71-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:47:19-56
+72        <activity android:name="com.example.meshchat.ui.MainActivity" />
+72-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:48:9-53
+72-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:48:19-50
+73
+74        <service
+74-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:50:9-51:68
+75            android:name="com.example.meshchat.service.MeshService"
+75-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:50:18-53
+76            android:foregroundServiceType="connectedDevice" />
+76-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:51:18-65
+77
+78        <activity
+78-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\mouna\.gradle\caches\transforms-3\55009aff8ebbbf22dc1d9506c4ceb3f5\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:9-22:45
+79            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+79-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\mouna\.gradle\caches\transforms-3\55009aff8ebbbf22dc1d9506c4ceb3f5\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:19-85
+80            android:exported="false"
+80-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\mouna\.gradle\caches\transforms-3\55009aff8ebbbf22dc1d9506c4ceb3f5\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:22:19-43
+81            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+81-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\mouna\.gradle\caches\transforms-3\55009aff8ebbbf22dc1d9506c4ceb3f5\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:21:19-78
+82
+83        <meta-data
+83-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\mouna\.gradle\caches\transforms-3\7c2130ad988d033e2065d9c3e076cc40\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+84            android:name="com.google.android.gms.version"
+84-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\mouna\.gradle\caches\transforms-3\7c2130ad988d033e2065d9c3e076cc40\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+85            android:value="@integer/google_play_services_version" />
+85-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\mouna\.gradle\caches\transforms-3\7c2130ad988d033e2065d9c3e076cc40\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+86
+87        <provider
+87-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mouna\.gradle\caches\transforms-3\b5f7e7da992276882b0a4309f97e1359\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+88            android:name="androidx.startup.InitializationProvider"
+88-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mouna\.gradle\caches\transforms-3\b5f7e7da992276882b0a4309f97e1359\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+89            android:authorities="com.example.meshchat.androidx-startup"
+89-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mouna\.gradle\caches\transforms-3\b5f7e7da992276882b0a4309f97e1359\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+90            android:exported="false" >
+90-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mouna\.gradle\caches\transforms-3\b5f7e7da992276882b0a4309f97e1359\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+91            <meta-data
+91-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mouna\.gradle\caches\transforms-3\b5f7e7da992276882b0a4309f97e1359\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+92                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+92-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mouna\.gradle\caches\transforms-3\b5f7e7da992276882b0a4309f97e1359\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+93                android:value="androidx.startup" />
+93-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mouna\.gradle\caches\transforms-3\b5f7e7da992276882b0a4309f97e1359\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+94            <meta-data
+94-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\mouna\.gradle\caches\transforms-3\7de2ef0913ef22818cbeb9419148be21\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+95                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+95-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\mouna\.gradle\caches\transforms-3\7de2ef0913ef22818cbeb9419148be21\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+96                android:value="androidx.startup" />
+96-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\mouna\.gradle\caches\transforms-3\7de2ef0913ef22818cbeb9419148be21\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+97            <meta-data
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+98                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+99                android:value="androidx.startup" />
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+100        </provider>
+101
+102        <service
+102-->[androidx.room:room-runtime:2.6.1] C:\Users\mouna\.gradle\caches\transforms-3\8e602bd6e92e6a678adccaa5fc7709e6\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+103            android:name="androidx.room.MultiInstanceInvalidationService"
+103-->[androidx.room:room-runtime:2.6.1] C:\Users\mouna\.gradle\caches\transforms-3\8e602bd6e92e6a678adccaa5fc7709e6\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+104            android:directBootAware="true"
+104-->[androidx.room:room-runtime:2.6.1] C:\Users\mouna\.gradle\caches\transforms-3\8e602bd6e92e6a678adccaa5fc7709e6\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+105            android:exported="false" />
+105-->[androidx.room:room-runtime:2.6.1] C:\Users\mouna\.gradle\caches\transforms-3\8e602bd6e92e6a678adccaa5fc7709e6\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+106
+107        <receiver
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+108            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+109            android:directBootAware="false"
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+110            android:enabled="true"
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+111            android:exported="true"
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+112            android:permission="android.permission.DUMP" >
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+113            <intent-filter>
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+114                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+115            </intent-filter>
+116            <intent-filter>
+116-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+117                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+118            </intent-filter>
+119            <intent-filter>
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+120                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+121            </intent-filter>
+122            <intent-filter>
+122-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+123                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+123-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+123-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mouna\.gradle\caches\transforms-3\d21099b7d7804fea1c0c1c3f05ef3d8a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+124            </intent-filter>
+125        </receiver>
+126    </application>
+127
+128</manifest>

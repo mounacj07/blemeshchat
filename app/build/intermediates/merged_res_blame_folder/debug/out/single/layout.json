@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "com.example.meshchat.app-mergeDebugResources-3:/layout/activity_device_list.xml",
+        "source": "com.example.meshchat.app-main-6:/layout/activity_device_list.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-mergeDebugResources-3:/layout/activity_setup.xml",
+        "source": "com.example.meshchat.app-main-6:/layout/activity_setup.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-mergeDebugResources-3:/layout/item_chat_sent.xml",
+        "source": "com.example.meshchat.app-main-6:/layout/item_chat_sent.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-mergeDebugResources-3:/layout/activity_login.xml",
+        "source": "com.example.meshchat.app-main-6:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-mergeDebugResources-3:/layout/activity_main.xml",
+        "source": "com.example.meshchat.app-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-mergeDebugResources-3:/layout/item_chat_received.xml",
+        "source": "com.example.meshchat.app-main-6:/layout/item_chat_received.xml"
+    },
+    {
+        "merged": "com.example.meshchat.app-mergeDebugResources-3:/layout/item_device.xml",
+        "source": "com.example.meshchat.app-main-6:/layout/item_device.xml"
+    }
+]

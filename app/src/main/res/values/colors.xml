@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Palette -->
+    <color name="colorPrimary">#1A202C</color> <!-- Deep Navy -->
+    <color name="colorPrimaryDark">#111620</color> <!-- Darker Navy -->
+    <color name="colorAccent">#8B5CF6</color> <!-- Vibrant Purple -->
+    
+    <!-- Text -->
+    <color name="textColorPrimary">#E2E8F0</color> <!-- Light Grayish White -->
+    <color name="textColorSecondary">#A0AEC0</color> <!-- Soft Gray -->
+    
+    <!-- UI Elements -->
+    <color name="windowBackground">#1A202C</color> <!-- Deep Navy -->
+    <color name="sosRed">#D32F2F</color> <!-- Material Red 700 -->
+    <color name="chat_bubble_sent">#4C1D95</color> <!-- Deep Purple -->
+    <color name="chat_bubble_received">#2D3748</color> <!-- Grayish Navy -->
+    
+    <!-- Standard Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
