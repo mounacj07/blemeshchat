@@ -23,6 +23,11 @@ class BleScannerHelper(
     
     private val RESTART_INTERVAL_MS = 30000L
 
+    init {
+        // Ensure clean state on creation (e.g., after service restart)
+        isScanning = false
+    }
+
     fun startScanning() {
         if (isScanning) return
         if (!adapter.isEnabled) {
