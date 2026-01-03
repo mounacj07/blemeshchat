@@ -194,7 +194,7 @@ public final class NodeDao_Impl implements NodeDao {
 
   @Override
   public Flow<List<NodeEntity>> getAllNodes() {
-    final String _sql = "SELECT * FROM nodes ORDER BY lastSeenTimestamp DESC";
+    final String _sql = "SELECT * FROM nodes ORDER BY name ASC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return CoroutinesRoom.createFlow(__db, false, new String[] {"nodes"}, new Callable<List<NodeEntity>>() {
       @Override

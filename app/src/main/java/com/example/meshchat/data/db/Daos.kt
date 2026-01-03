@@ -21,7 +21,7 @@ interface MessageDao {
 
 @Dao
 interface NodeDao {
-    @Query("SELECT * FROM nodes ORDER BY lastSeenTimestamp DESC")
+    @Query("SELECT * FROM nodes ORDER BY name ASC")
     fun getAllNodes(): Flow<List<NodeEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

@@ -172,10 +172,14 @@ class MeshService : Service() {
             session.chunks[chunkNum.toByte()] = packet.payload
 
             if (session.chunks.size == totalChunks) {
-                val fullPayload = (1..totalChunks).map { session.chunks[it.toByte()] }.joinToString("")
-                val finalPacket = packet.copy(payload = fullPayload, ttl = 1)
-                processCompleteMessage(finalPacket)
-                incomingChunks.remove(packet.messageId)
+                // FIX: Verify ALL chunks 1..N exist before reassembling to prevent null values
+                val allChunksPresent = (1..totalChunks).all { session.chunks[it.toByte()] != null }
+                if (allChunksPresent) {
+                    val fullPayload = (1..totalChunks).map { session.chunks[it.toByte()]!! }.joinToString("")
+                    val finalPacket = packet.copy(payload = fullPayload, ttl = 1)
+                    processCompleteMessage(finalPacket)
+                    incomingChunks.remove(packet.messageId)
+                }
             }
         }
     }

@@ -14,11 +14,18 @@ class MeshRouter(
         // Packets with TTL 0 should not be processed or relayed further.
         if (packet.ttl <= 0) return
 
-        // FIX: Create a unique cache key combining messageId AND ttl.
-        // For chunked messages, the TTL field encodes the chunk number,
-        // so each chunk of the same message will have a unique key.
-        // This prevents chunks 2, 3, 4 from being incorrectly dropped as "duplicates".
-        val cacheKey = (packet.messageId.toInt() shl 8) or (packet.ttl.toInt() and 0xFF)
+        // FIX: For chunked messages, TTL encodes chunk number (totalChunks in upper 4 bits).
+        // For non-chunked messages (totalChunks = 0), use only messageId to prevent duplicates from relays.
+        val totalChunks = (packet.ttl.toInt() shr 4) and 0x0F
+        val isChunked = totalChunks > 0
+        
+        val cacheKey = if (isChunked) {
+            // Chunked: include TTL (which has chunk number) to allow each chunk through
+            (packet.messageId.toInt() shl 8) or (packet.ttl.toInt() and 0xFF)
+        } else {
+            // Non-chunked: use only messageId to deduplicate relays with different TTLs
+            packet.messageId.toInt()
+        }
         
         if (PacketCache.hasSeen(cacheKey)) {
             return
@@ -34,8 +41,11 @@ class MeshRouter(
         // Relay logic:
         // 1. If it's a broadcast (targetId == 0), we ALWAY relay it (if TTL > 0), even if we processed it.
         // 2. If it's a direct message (targetId != 0), we relay it ONLY if it's NOT for us.
+        // 3. EXCEPTION: Don't relay DISCOVERY or SOS packets - they broadcast frequently/with priority and cause issues.
         val isBroadcast = packet.targetId == 0.toShort()
-        val shouldRelay = isBroadcast || !isForMe
+        val isDiscovery = packet.type == BleConstants.PACKET_TYPE_DISCOVERY
+        val isSOS = packet.type == BleConstants.PACKET_TYPE_SOS
+        val shouldRelay = (isBroadcast || !isForMe) && !isDiscovery && !isSOS
 
         if (shouldRelay) {
             val relayedPacket = packet.copy(ttl = (packet.ttl - 1).toByte())
@@ -54,8 +64,10 @@ class MeshRouter(
             // Priority is maintained via startPriorityAdvertising().
             advertiser.startPriorityAdvertising(packet, 2000)
         } else {
-            Log.d("MeshRouter", "Queueing packet ${packet.messageId}")
-            advertiser.startAdvertising(packet, 500)
+            Log.d("MeshRouter", "Sending priority message packet ${packet.messageId}")
+            // Use priority advertising for messages too - jumps ahead of discovery/relay
+            // SOS still has highest priority (2000ms duration and arrives after user trigger)
+            advertiser.startPriorityAdvertising(packet, 500)
         }
     }
 }
