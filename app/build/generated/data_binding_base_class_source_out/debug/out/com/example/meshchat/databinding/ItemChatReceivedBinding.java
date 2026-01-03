@@ -22,10 +22,14 @@ public final class ItemChatReceivedBinding implements ViewBinding {
   @NonNull
   public final TextView textMessageBody;
 
+  @NonNull
+  public final TextView textTimestamp;
+
   private ItemChatReceivedBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView textMessageBody) {
+      @NonNull TextView textMessageBody, @NonNull TextView textTimestamp) {
     this.rootView = rootView;
     this.textMessageBody = textMessageBody;
+    this.textTimestamp = textTimestamp;
   }
 
   @Override
@@ -61,7 +65,14 @@ public final class ItemChatReceivedBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemChatReceivedBinding((ConstraintLayout) rootView, textMessageBody);
+      id = R.id.text_timestamp;
+      TextView textTimestamp = ViewBindings.findChildViewById(rootView, id);
+      if (textTimestamp == null) {
+        break missingId;
+      }
+
+      return new ItemChatReceivedBinding((ConstraintLayout) rootView, textMessageBody,
+          textTimestamp);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

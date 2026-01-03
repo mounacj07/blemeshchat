@@ -1,62 +1,66 @@
 [
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/drawable_bg_chat_input.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/drawable/bg_chat_input.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\font_montserrat.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\font\\montserrat.xml"
     },
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/layout_activity_main.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/layout/activity_main.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/layout_item_device.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/layout/item_device.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\layout_activity_device_list.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\activity_device_list.xml"
     },
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/layout_activity_device_list.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/layout/activity_device_list.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/font_montserrat_medium.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/font/montserrat_medium.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\layout_item_device.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\item_device.xml"
     },
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/drawable_bg_chat_sent.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/drawable/bg_chat_sent.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\layout_activity_setup.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\activity_setup.xml"
     },
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/font_montserrat.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/font/montserrat.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\font_montserrat_medium.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\font\\montserrat_medium.xml"
     },
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/anim_slide_up_fade_in.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/anim/slide_up_fade_in.xml"
-    },
-    {
-        "merged": "com.example.meshchat.app-merged_res-43:/layout_activity_login.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/layout/activity_login.xml"
-    },
-    {
-        "merged": "com.example.meshchat.app-merged_res-43:/font_poppins.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/font/poppins.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\layout_item_chat_sent.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\item_chat_sent.xml"
     },
     {
         "merged": "com.example.meshchat.app-merged_res-43:/layout_item_chat_received.xml.flat",
         "source": "com.example.meshchat.app-main-45:/layout/item_chat_received.xml"
     },
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/drawable_bg_chat_received.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/drawable/bg_chat_received.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\font_poppins_medium.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\font\\poppins_medium.xml"
     },
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/layout_item_chat_sent.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/layout/item_chat_sent.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\font_poppins.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\font\\poppins.xml"
     },
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/font_poppins_medium.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/font/poppins_medium.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\anim_slide_up_fade_in.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\anim\\slide_up_fade_in.xml"
     },
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/layout_activity_setup.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/layout/activity_setup.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\layout_item_chat_received.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\item_chat_received.xml"
+    },
+    {
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\drawable_bg_chat_input.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\drawable\\bg_chat_input.xml"
+    },
+    {
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\drawable_bg_chat_sent.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\drawable\\bg_chat_sent.xml"
+    },
+    {
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\drawable_bg_chat_received.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\drawable\\bg_chat_received.xml"
     }
 ]

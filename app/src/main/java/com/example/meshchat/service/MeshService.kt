@@ -187,8 +187,18 @@ class MeshService : Service() {
     private suspend fun processCompleteMessage(packet: MeshPacket) {
         when (packet.type) {
             BleConstants.PACKET_TYPE_MESSAGE -> {
+                // Decrypt the message content with shared key derived from both device IDs
+                val myId = userPrefs.getUserId()
+                val key = com.example.meshchat.crypto.CryptoHelper.deriveKey(myId, packet.senderId)
+                val decryptedContent = try {
+                    com.example.meshchat.crypto.CryptoHelper.decrypt(packet.payload, key, packet.messageId)
+                } catch (e: Exception) {
+                    Log.e("MeshService", "Decryption failed", e)
+                    packet.payload // Fallback to raw payload if decryption fails
+                }
+                
                 val senderName = withContext(Dispatchers.IO) { database.nodeDao().getNodeById(packet.senderId.toString())?.name ?: "Unknown User" }
-                val entity = MessageEntity(senderId = packet.senderId.toString(), senderName = senderName, targetId = packet.targetId.toString(), content = packet.payload, timestamp = System.currentTimeMillis(), isSelf = false, status = MessageStatus.DELIVERED)
+                val entity = MessageEntity(senderId = packet.senderId.toString(), senderName = senderName, targetId = packet.targetId.toString(), content = decryptedContent, timestamp = System.currentTimeMillis(), isSelf = false, status = MessageStatus.DELIVERED)
                 database.messageDao().insertMessage(entity)
             }
             BleConstants.PACKET_TYPE_DISCOVERY -> {
@@ -291,7 +301,11 @@ class MeshService : Service() {
             database.messageDao().insertMessage(entity)
         }
 
-        val packet = MeshPacket(type = BleConstants.PACKET_TYPE_MESSAGE, ttl = 3.toByte(), messageId = messageId, senderId = senderId, targetId = targetId, payload = content)
+        // Encrypt the message content with shared key derived from both device IDs
+        val key = com.example.meshchat.crypto.CryptoHelper.deriveKey(senderId, targetId)
+        val encryptedContent = com.example.meshchat.crypto.CryptoHelper.encrypt(content, key, messageId)
+        
+        val packet = MeshPacket(type = BleConstants.PACKET_TYPE_MESSAGE, ttl = 3.toByte(), messageId = messageId, senderId = senderId, targetId = targetId, payload = encryptedContent)
         splitAndSend(packet)
     }
 

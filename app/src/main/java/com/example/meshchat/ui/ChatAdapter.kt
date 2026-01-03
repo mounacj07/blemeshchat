@@ -33,6 +33,7 @@ class ChatAdapter : ListAdapter<MessageEntity, ChatAdapter.MessageViewHolder>(Me
 
     class MessageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val messageBody: TextView = itemView.findViewById(R.id.text_message_body)
+        private val timestamp: TextView? = itemView.findViewById(R.id.text_timestamp)
 
         fun bind(message: MessageEntity) {
             messageBody.text = message.content
@@ -48,6 +49,12 @@ class ChatAdapter : ListAdapter<MessageEntity, ChatAdapter.MessageViewHolder>(Me
             // Make URLs clickable (for location links in SOS messages)
             android.text.util.Linkify.addLinks(messageBody, android.text.util.Linkify.WEB_URLS)
             messageBody.movementMethod = android.text.method.LinkMovementMethod.getInstance()
+            
+            // Display timestamp for received messages
+            timestamp?.let {
+                val dateFormat = java.text.SimpleDateFormat("hh:mm a", java.util.Locale.getDefault())
+                it.text = dateFormat.format(java.util.Date(message.timestamp))
+            }
         }
     }
 }

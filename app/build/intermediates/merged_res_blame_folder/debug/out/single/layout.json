@@ -1,27 +1,31 @@
 [
     {
-        "merged": "com.example.meshchat.app-mergeDebugResources-42:/layout/item_device.xml",
-        "source": "com.example.meshchat.app-main-45:/layout/item_device.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-mergeDebugResources-42:\\layout\\activity_device_list.xml",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\activity_device_list.xml"
     },
     {
-        "merged": "com.example.meshchat.app-mergeDebugResources-42:/layout/activity_login.xml",
-        "source": "com.example.meshchat.app-main-45:/layout/activity_login.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-mergeDebugResources-42:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.example.meshchat.app-mergeDebugResources-42:/layout/activity_main.xml",
-        "source": "com.example.meshchat.app-main-45:/layout/activity_main.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-mergeDebugResources-42:\\layout\\activity_setup.xml",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\activity_setup.xml"
     },
     {
-        "merged": "com.example.meshchat.app-mergeDebugResources-42:/layout/activity_device_list.xml",
-        "source": "com.example.meshchat.app-main-45:/layout/activity_device_list.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-mergeDebugResources-42:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.meshchat.app-mergeDebugResources-42:/layout/activity_setup.xml",
-        "source": "com.example.meshchat.app-main-45:/layout/activity_setup.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-mergeDebugResources-42:\\layout\\item_device.xml",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\item_device.xml"
     },
     {
-        "merged": "com.example.meshchat.app-mergeDebugResources-42:/layout/item_chat_sent.xml",
-        "source": "com.example.meshchat.app-main-45:/layout/item_chat_sent.xml"
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-mergeDebugResources-42:\\layout\\item_chat_sent.xml",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\item_chat_sent.xml"
+    },
+    {
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-mergeDebugResources-42:\\layout\\item_chat_received.xml",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\item_chat_received.xml"
     },
     {
         "merged": "com.example.meshchat.app-mergeDebugResources-42:/layout/item_chat_received.xml",
