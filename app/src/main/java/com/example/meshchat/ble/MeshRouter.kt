@@ -14,10 +14,16 @@ class MeshRouter(
         // Packets with TTL 0 should not be processed or relayed further.
         if (packet.ttl <= 0) return
 
-        if (PacketCache.hasSeen(packet.messageId.toInt())) {
+        // FIX: Create a unique cache key combining messageId AND ttl.
+        // For chunked messages, the TTL field encodes the chunk number,
+        // so each chunk of the same message will have a unique key.
+        // This prevents chunks 2, 3, 4 from being incorrectly dropped as "duplicates".
+        val cacheKey = (packet.messageId.toInt() shl 8) or (packet.ttl.toInt() and 0xFF)
+        
+        if (PacketCache.hasSeen(cacheKey)) {
             return
         }
-        PacketCache.markSeen(packet.messageId.toInt())
+        PacketCache.markSeen(cacheKey)
 
         val isForMe = packet.targetId == myId || packet.targetId == 0.toShort()
 
@@ -41,8 +47,12 @@ class MeshRouter(
     fun sendParams(packet: MeshPacket) {
         // Use priority advertising for SOS, regular for others.
         if (packet.type == BleConstants.PACKET_TYPE_SOS) {
-            Log.d("MeshRouter", "Sending priority packet ${packet.messageId}")
-            advertiser.startPriorityAdvertising(packet, 10000) // Advertise SOS for 10 seconds
+            Log.d("MeshRouter", "Sending priority SOS packet ${packet.messageId}")
+            // FIX: Reduced from 10000ms to 2000ms per chunk.
+            // SOS messages with location URLs get chunked (~4 chunks).
+            // 10s per chunk = 40s total; 2s per chunk = 8s total.
+            // Priority is maintained via startPriorityAdvertising().
+            advertiser.startPriorityAdvertising(packet, 2000)
         } else {
             Log.d("MeshRouter", "Queueing packet ${packet.messageId}")
             advertiser.startAdvertising(packet, 500)

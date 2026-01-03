@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.meshchat.app-mergeDebugResources-2:/values-it/values-it.xml",
+            "outputFile": "com.example.meshchat.app-mergeDebugResources-41:/values-it/values-it.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mouna\\.gradle\\caches\\transforms-3\\7c2130ad988d033e2065d9c3e076cc40\\transformed\\jetified-play-services-basement-18.3.0\\res\\values-it\\values.xml",

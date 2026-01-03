@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.meshchat.app-mergeDebugResources-2:/values-ml/values-ml.xml",
+            "outputFile": "com.example.meshchat.app-mergeDebugResources-41:/values-ml/values-ml.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mouna\\.gradle\\caches\\transforms-3\\2412ed20ad4323865a84d635d69fb813\\transformed\\appcompat-1.6.1\\res\\values-ml\\values-ml.xml",

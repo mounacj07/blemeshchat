@@ -36,6 +36,18 @@ class ChatAdapter : ListAdapter<MessageEntity, ChatAdapter.MessageViewHolder>(Me
 
         fun bind(message: MessageEntity) {
             messageBody.text = message.content
+            
+            // Style SOS messages with red color
+            if (message.content.startsWith("SOS:")) {
+                messageBody.setTextColor(android.graphics.Color.RED)
+            } else {
+                // Reset to default color for non-SOS messages
+                messageBody.setTextColor(itemView.context.getColor(R.color.textColorPrimary))
+            }
+            
+            // Make URLs clickable (for location links in SOS messages)
+            android.text.util.Linkify.addLinks(messageBody, android.text.util.Linkify.WEB_URLS)
+            messageBody.movementMethod = android.text.method.LinkMovementMethod.getInstance()
         }
     }
 }

@@ -10,17 +10,17 @@
 10
 11    <!-- Legacy Bluetooth permissions for Android 11 and lower -->
 12    <uses-permission
-12-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:6:5-95
+12-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:6:5-95
 13        android:name="android.permission.BLUETOOTH"
-13-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:6:22-65
+13-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:6:22-65
 14        android:maxSdkVersion="30" />
-14-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:6:66-92
+14-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:6:66-92
 15    <uses-permission
-15-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:7:5-101
+15-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:7:5-101
 16        android:name="android.permission.BLUETOOTH_ADMIN"
-16-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:7:22-71
+16-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:7:22-71
 17        android:maxSdkVersion="30" />
-17-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:7:72-98
+17-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:7:72-98
 18
 19    <!--
 20         ACCESS_FINE_LOCATION is required for BLE scanning on all versions.
@@ -30,40 +30,40 @@
 24         device models.
 25    -->
 26    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-26-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:16:5-79
-26-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:16:22-76
+26-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:16:5-79
+26-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:16:22-76
 27    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-27-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:17:5-85
-27-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:17:22-82
+27-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:17:5-85
+27-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:17:22-82
 28
 29    <!-- Needed for Android 12+ -->
 30    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
-30-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:20:5-73
-30-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:20:22-70
+30-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:20:5-73
+30-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:20:22-70
 31    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
-31-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:21:5-78
-31-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:21:22-75
+31-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:21:5-78
+31-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:21:22-75
 32    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-32-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:22:5-76
-32-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:22:22-73
+32-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:22:5-76
+32-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:22:22-73
 33
 34    <!-- Common permissions -->
 35    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-35-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:25:5-77
-35-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:25:22-74
+35-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:25:5-77
+35-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:25:22-74
 36    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-36-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:26:5-77
-36-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:26:22-74
+36-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:26:5-77
+36-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:26:22-74
 37    <uses-permission android:name="android.permission.VIBRATE" />
-37-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:27:5-66
-37-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:27:22-63
+37-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:27:5-66
+37-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:27:22-63
 38
 39    <uses-feature
-39-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:29:5-89
+39-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:29:5-89
 40        android:name="android.hardware.bluetooth_le"
-40-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:29:19-63
+40-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:29:19-63
 41        android:required="true" />
-41-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:29:64-87
+41-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:29:64-87
 42
 43    <permission
 43-->[androidx.core:core:1.10.1] C:\Users\mouna\.gradle\caches\transforms-3\5ebfcb288b94bc8d2a91970385f690cb\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
@@ -77,57 +77,57 @@
 47-->[androidx.core:core:1.10.1] C:\Users\mouna\.gradle\caches\transforms-3\5ebfcb288b94bc8d2a91970385f690cb\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
 48
 49    <application
-49-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:31:5-52:19
+49-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:31:5-52:19
 50        android:allowBackup="true"
-50-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:32:9-35
+50-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:32:9-35
 51        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 51-->[androidx.core:core:1.10.1] C:\Users\mouna\.gradle\caches\transforms-3\5ebfcb288b94bc8d2a91970385f690cb\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
 52        android:debuggable="true"
 53        android:extractNativeLibs="false"
 54        android:label="@string/app_name"
-54-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:33:9-41
+54-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:33:9-41
 55        android:supportsRtl="true"
-55-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:34:9-35
+55-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:34:9-35
 56        android:testOnly="true"
 57        android:theme="@style/Theme.BleMeshChat" >
-57-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:35:9-49
+57-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:35:9-49
 58        <meta-data
-58-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:37:9-95
+58-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:37:9-95
 59            android:name="preloaded_fonts"
-59-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:37:20-50
+59-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:37:20-50
 60            android:resource="@array/preloaded_fonts" />
-60-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:37:51-92
+60-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:37:51-92
 61
 62        <activity
-62-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:39:9-46:20
+62-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:39:9-46:20
 63            android:name="com.example.meshchat.LoginActivity"
-63-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:40:13-42
+63-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:40:13-42
 64            android:exported="true" >
-64-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:41:13-36
+64-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:41:13-36
 65            <intent-filter>
-65-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:42:13-45:29
+65-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:42:13-45:29
 66                <action android:name="android.intent.action.MAIN" />
-66-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:43:17-69
-66-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:43:25-66
+66-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:43:17-69
+66-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:43:25-66
 67
 68                <category android:name="android.intent.category.LAUNCHER" />
-68-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:44:17-77
-68-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:44:27-74
+68-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:44:17-77
+68-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:44:27-74
 69            </intent-filter>
 70        </activity>
 71        <activity android:name="com.example.meshchat.ui.DeviceListActivity" />
-71-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:47:9-59
-71-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:47:19-56
+71-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:47:9-59
+71-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:47:19-56
 72        <activity android:name="com.example.meshchat.ui.MainActivity" />
-72-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:48:9-53
-72-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:48:19-50
+72-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:48:9-53
+72-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:48:19-50
 73
 74        <service
-74-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:50:9-51:68
+74-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:50:9-51:68
 75            android:name="com.example.meshchat.service.MeshService"
-75-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:50:18-53
+75-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:50:18-53
 76            android:foregroundServiceType="connectedDevice" />
-76-->C:\Users\mouna\.gemini\antigravity\scratch\BleMeshChat\app\src\main\AndroidManifest.xml:51:18-65
+76-->C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:51:18-65
 77
 78        <activity
 78-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\mouna\.gradle\caches\transforms-3\55009aff8ebbbf22dc1d9506c4ceb3f5\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:9-22:45
