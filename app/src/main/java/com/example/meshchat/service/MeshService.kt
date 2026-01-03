@@ -127,7 +127,7 @@ class MeshService : Service() {
                     payload = name.take(14)
                 )
                 if (::advertiserHelper.isInitialized) {
-                    advertiserHelper.startAdvertising(packet, 750) 
+                    advertiserHelper.startAdvertising(packet, 300) 
                 }
                 delay(1500) 
             }

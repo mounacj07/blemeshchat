@@ -99,9 +99,11 @@ class DeviceListActivity : AppCompatActivity() {
 
     private val requestMultiplePermissions = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
         if (permissions.values.all { it }) {
-            if (isScanFlowActive) checkBluetoothEnabled() // Step 2: Permissions are granted, now check BT state
+            // Permissions granted - start service if not bound, then continue with scan flow if active
+            if (!isBound) startAndBindService()
+            if (isScanFlowActive) checkBluetoothEnabled()
         } else {
-            Toast.makeText(this, "All permissions are required to scan.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "All permissions are required.", Toast.LENGTH_SHORT).show()
             isScanFlowActive = false
         }
     }
@@ -147,7 +149,39 @@ class DeviceListActivity : AppCompatActivity() {
             true // Consume the long click
         }
 
-        startAndBindService() // Bind service on startup for background discoverability
+        // FIX: Check permissions first before starting service (required for Android 12+)
+        checkAndRequestPermissionsForService()
+    }
+
+    private fun checkAndRequestPermissionsForService() {
+        val requiredPermissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            // Android 13+ needs POST_NOTIFICATIONS for SOS alerts
+            arrayOf(
+                Manifest.permission.BLUETOOTH_SCAN,
+                Manifest.permission.BLUETOOTH_ADVERTISE,
+                Manifest.permission.BLUETOOTH_CONNECT,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.POST_NOTIFICATIONS
+            )
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            arrayOf(
+                Manifest.permission.BLUETOOTH_SCAN,
+                Manifest.permission.BLUETOOTH_ADVERTISE,
+                Manifest.permission.BLUETOOTH_CONNECT,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            )
+        } else {
+            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
+        }
+
+        val permissionsToRequest = requiredPermissions.filter { ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED }
+
+        if (permissionsToRequest.isNotEmpty()) {
+            requestMultiplePermissions.launch(permissionsToRequest.toTypedArray())
+        } else {
+            // Permissions already granted, start service
+            startAndBindService()
+        }
     }
 
     private fun initiateScanFlow() {

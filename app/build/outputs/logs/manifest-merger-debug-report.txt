@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:2:1-54:12
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:2:1-55:12
 MERGED from [androidx.databinding:viewbinding:8.1.0] C:\Users\mouna\.gradle\caches\transforms-3\48b115e07cb6aac48826c371d0bcd4ec\transformed\jetified-viewbinding-8.1.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\mouna\.gradle\caches\transforms-3\efe09f43af707b40e27a27b65e9148ef\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\mouna\.gradle\caches\transforms-3\6c3018ce85d1e01e3907df254a0dea87\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -105,23 +105,27 @@ uses-permission#android.permission.FOREGROUND_SERVICE
 ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:25:5-77
 	android:name
 		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:25:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:26:5-94
+	android:name
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:26:22-91
 uses-permission#android.permission.POST_NOTIFICATIONS
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:26:5-77
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:27:5-77
 	android:name
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:26:22-74
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:27:22-74
 uses-permission#android.permission.VIBRATE
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:27:5-66
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:28:5-66
 	android:name
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:27:22-63
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:28:22-63
 uses-feature#android.hardware.bluetooth_le
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:29:5-89
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:30:5-89
 	android:required
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:29:64-87
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:30:64-87
 	android:name
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:29:19-63
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:30:19-63
 application
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:31:5-52:19
-INJECTED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:31:5-52:19
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:32:5-53:19
+INJECTED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:32:5-53:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\mouna\.gradle\caches\transforms-3\efe09f43af707b40e27a27b65e9148ef\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\mouna\.gradle\caches\transforms-3\efe09f43af707b40e27a27b65e9148ef\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\mouna\.gradle\caches\transforms-3\6c3018ce85d1e01e3907df254a0dea87\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -153,49 +157,49 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\mouna\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.10.1] C:\Users\mouna\.gradle\caches\transforms-3\5ebfcb288b94bc8d2a91970385f690cb\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:34:9-35
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:35:9-35
 	android:label
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:33:9-41
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:34:9-41
 	android:allowBackup
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:32:9-35
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:33:9-35
 	android:theme
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:35:9-49
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:36:9-49
 meta-data#preloaded_fonts
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:37:9-95
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:38:9-95
 	android:resource
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:37:51-92
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:38:51-92
 	android:name
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:37:20-50
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:38:20-50
 activity#com.example.meshchat.LoginActivity
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:39:9-46:20
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:40:9-47:20
 	android:exported
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:41:13-36
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:42:13-36
 	android:name
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:40:13-42
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:41:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:42:13-45:29
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:43:13-46:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:43:17-69
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:44:17-69
 	android:name
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:43:25-66
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:44:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:44:17-77
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:45:17-77
 	android:name
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:44:27-74
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:45:27-74
 activity#com.example.meshchat.ui.DeviceListActivity
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:47:9-59
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:48:9-59
 	android:name
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:47:19-56
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:48:19-56
 activity#com.example.meshchat.ui.MainActivity
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:48:9-53
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:49:9-53
 	android:name
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:48:19-50
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:49:19-50
 service#com.example.meshchat.service.MeshService
-ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:50:9-51:68
+ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:51:9-52:68
 	android:foregroundServiceType
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:51:18-65
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:52:18-65
 	android:name
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:50:18-53
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:51:18-53
 uses-sdk
 INJECTED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml
