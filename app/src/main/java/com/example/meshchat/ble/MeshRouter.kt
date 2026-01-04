@@ -38,13 +38,13 @@ class MeshRouter(
         }
 
         // Relay logic:
-        // 1. If it's a broadcast (targetId == 0), we ALWAY relay it (if TTL > 0), even if we processed it.
+        // 1. If it's a broadcast (targetId == 0), we ALWAYS relay it (if TTL > 0), even if we processed it.
         // 2. If it's a direct message (targetId != 0), we relay it ONLY if it's NOT for us.
-        // 3. EXCEPTION: Don't relay DISCOVERY or SOS packets - they broadcast frequently/with priority and cause issues.
+        // 3. EXCEPTION: Don't relay DISCOVERY packets - they broadcast frequently anyway.
+        // NOTE: SOS packets ARE relayed for multi-hop emergency coverage.
         val isBroadcast = packet.targetId == 0.toShort()
         val isDiscovery = packet.type == BleConstants.PACKET_TYPE_DISCOVERY
-        val isSOS = packet.type == BleConstants.PACKET_TYPE_SOS
-        val shouldRelay = (isBroadcast || !isForMe) && !isDiscovery && !isSOS
+        val shouldRelay = (isBroadcast || !isForMe) && !isDiscovery
 
         if (shouldRelay) {
             val relayedPacket = packet.copy(ttl = (packet.ttl - 1).toByte())

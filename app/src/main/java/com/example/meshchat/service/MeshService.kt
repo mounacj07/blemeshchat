@@ -231,7 +231,9 @@ class MeshService : Service() {
             }
             BleConstants.PACKET_TYPE_SOS -> {
                 val senderName = withContext(Dispatchers.IO) { database.nodeDao().getNodeById(packet.senderId.toString())?.name ?: "SOS User" }
-                val entity = MessageEntity(senderId = packet.senderId.toString(), senderName = senderName, targetId = null, content = "SOS: ${packet.payload}", timestamp = System.currentTimeMillis(), isSelf = false, status = MessageStatus.DELIVERED)
+                // FIX: Use deterministic ID to prevent duplicate SOS from relay
+                val sosUniqueId = "sos:${packet.senderId}:${packet.messageId}"
+                val entity = MessageEntity(id = sosUniqueId, senderId = packet.senderId.toString(), senderName = senderName, targetId = null, content = "SOS: ${packet.payload}", timestamp = System.currentTimeMillis(), isSelf = false, status = MessageStatus.DELIVERED)
                 database.messageDao().insertMessage(entity)
                 showSosNotification(packet.senderId.toString(), senderName, packet.payload)
             }
