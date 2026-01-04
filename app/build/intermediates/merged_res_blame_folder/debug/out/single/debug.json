@@ -20,6 +20,10 @@
         "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\item_device.xml"
     },
     {
+        "merged": "com.example.meshchat.app-merged_res-43:/layout_activity_device_list.xml.flat",
+        "source": "com.example.meshchat.app-main-45:/layout/activity_device_list.xml"
+    },
+    {
         "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\layout_activity_setup.xml.flat",
         "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\activity_setup.xml"
     },
@@ -32,10 +36,6 @@
         "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\item_chat_sent.xml"
     },
     {
-        "merged": "com.example.meshchat.app-merged_res-43:/layout_item_chat_received.xml.flat",
-        "source": "com.example.meshchat.app-main-45:/layout/item_chat_received.xml"
-    },
-    {
         "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\font_poppins_medium.xml.flat",
         "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\font\\poppins_medium.xml"
     },
@@ -44,12 +44,12 @@
         "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\font\\poppins.xml"
     },
     {
-        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\anim_slide_up_fade_in.xml.flat",
-        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\anim\\slide_up_fade_in.xml"
-    },
-    {
         "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\layout_item_chat_received.xml.flat",
         "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\layout\\item_chat_received.xml"
+    },
+    {
+        "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\anim_slide_up_fade_in.xml.flat",
+        "source": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-main-45:\\anim\\slide_up_fade_in.xml"
     },
     {
         "merged": "C:\\Users\\mouna\\.gradle\\daemon\\8.2\\com.example.meshchat.app-merged_res-43:\\drawable_bg_chat_input.xml.flat",

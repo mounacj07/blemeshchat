@@ -28,6 +28,7 @@ id app_subtitle
 id app_title
 id buttonContinue
 id buttonSend
+id button_add_device
 id button_scan
 id button_sos
 id editTextMessage

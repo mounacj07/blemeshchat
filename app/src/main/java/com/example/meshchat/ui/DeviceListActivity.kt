@@ -16,8 +16,10 @@ import android.os.Vibrator
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -66,6 +68,7 @@ class DeviceListActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var myNameTextView: TextView
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private lateinit var database: AppDatabase
 
     private val viewModel: DeviceListViewModel by viewModels {
         DeviceListViewModelFactory(AppDatabase.getDatabase(this))
@@ -113,6 +116,7 @@ class DeviceListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_device_list)
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        database = AppDatabase.getDatabase(this)
 
         textPrompt = findViewById(R.id.text_prompt)
         recyclerView = findViewById(R.id.recyclerViewDevices)
@@ -149,8 +153,56 @@ class DeviceListActivity : AppCompatActivity() {
             true // Consume the long click
         }
 
+        findViewById<Button>(R.id.button_add_device).setOnClickListener {
+            showAddDeviceDialog()
+        }
+
         // FIX: Check permissions first before starting service (required for Android 12+)
         checkAndRequestPermissionsForService()
+    }
+
+    private fun showAddDeviceDialog() {
+        val dialogView = layoutInflater.inflate(android.R.layout.simple_list_item_2, null)
+        // Use a simple programmatic layout for the dialog
+        val container = android.widget.LinearLayout(this).apply {
+            orientation = android.widget.LinearLayout.VERTICAL
+            setPadding(48, 32, 48, 0)
+        }
+        val idInput = EditText(this).apply {
+            hint = "Device ID (e.g. 12345)"
+            inputType = android.text.InputType.TYPE_CLASS_NUMBER
+        }
+        val nameInput = EditText(this).apply {
+            hint = "Name (optional)"
+            inputType = android.text.InputType.TYPE_CLASS_TEXT
+        }
+        container.addView(idInput)
+        container.addView(nameInput)
+
+        AlertDialog.Builder(this)
+            .setTitle("Add Device by ID")
+            .setView(container)
+            .setPositiveButton("Add") { _, _ ->
+                val idText = idInput.text.toString().trim()
+                val nameText = nameInput.text.toString().trim().ifEmpty { "Device $idText" }
+                if (idText.isNotEmpty()) {
+                    viewModel.viewModelScope.launch {
+                        val node = NodeEntity(
+                            nodeId = idText,
+                            lastSeenTimestamp = System.currentTimeMillis(),
+                            hopCount = 1, // Mark as indirect (via mesh)
+                            isDirect = false,
+                            name = nameText
+                        )
+                        database.nodeDao().insertNode(node)
+                    }
+                    Toast.makeText(this, "Added $nameText", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Please enter a device ID", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
     }
 
     private fun checkAndRequestPermissionsForService() {

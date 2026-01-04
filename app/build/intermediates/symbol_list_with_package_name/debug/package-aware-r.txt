@@ -3238,6 +3238,7 @@ id bounceStart
 id buttonContinue
 id buttonPanel
 id buttonSend
+id button_add_device
 id button_scan
 id button_sos
 id cache_measures

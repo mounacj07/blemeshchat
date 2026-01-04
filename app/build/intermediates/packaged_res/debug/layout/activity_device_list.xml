@@ -76,6 +76,18 @@
         android:layout_marginBottom="8dp"
         android:padding="12dp"
         android:text="Scan for Devices"
+        app:layout_constraintBottom_toTopOf="@+id/button_add_device"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_add_device"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="12dp"
+        android:text="Add Device by ID"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:layout_constraintBottom_toTopOf="@+id/button_sos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
