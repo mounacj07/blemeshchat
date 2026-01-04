@@ -39,16 +39,23 @@ class MeshRouter(
         }
 
         // Relay logic:
-        // 1. If it's a broadcast (targetId == 0), we ALWAY relay it (if TTL > 0), even if we processed it.
+        // 1. If it's a broadcast (targetId == 0), we ALWAYS relay it (if TTL > 0), even if we processed it.
         // 2. If it's a direct message (targetId != 0), we relay it ONLY if it's NOT for us.
-        // 3. EXCEPTION: Don't relay DISCOVERY or SOS packets - they broadcast frequently/with priority and cause issues.
+        // 3. EXCEPTION: Don't relay DISCOVERY packets - they broadcast frequently and cause issues.
+        // NOTE: SOS is now relayed. For chunked packets (including SOS), TTL encodes chunk info
+        //       and must NOT be decremented to avoid corrupting chunk data and causing duplicate notifications.
         val isBroadcast = packet.targetId == 0.toShort()
         val isDiscovery = packet.type == BleConstants.PACKET_TYPE_DISCOVERY
-        val isSOS = packet.type == BleConstants.PACKET_TYPE_SOS
-        val shouldRelay = (isBroadcast || !isForMe) && !isDiscovery && !isSOS
+        val shouldRelay = (isBroadcast || !isForMe) && !isDiscovery
 
         if (shouldRelay) {
-            val relayedPacket = packet.copy(ttl = (packet.ttl - 1).toByte())
+            // For chunked packets, preserve TTL (it contains chunk encoding, not hop count)
+            // For non-chunked packets, decrement TTL as normal
+            val relayedPacket = if (isChunked) {
+                packet // Preserve TTL for chunked to maintain chunk info
+            } else {
+                packet.copy(ttl = (packet.ttl - 1).toByte())
+            }
             Log.d("MeshRouter", "Relaying packet ${relayedPacket.messageId} for ${relayedPacket.targetId} with TTL ${relayedPacket.ttl}")
             advertiser.startAdvertising(relayedPacket, 500) // Relay for a short burst
         }
