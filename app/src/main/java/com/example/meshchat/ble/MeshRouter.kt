@@ -27,10 +27,9 @@ class MeshRouter(
             packet.messageId.toInt()
         }
         
-        if (PacketCache.hasSeen(cacheKey)) {
+        if (PacketCache.hasSeenAndMark(cacheKey)) {
             return
         }
-        PacketCache.markSeen(cacheKey)
 
         val isForMe = packet.targetId == myId || packet.targetId == 0.toShort()
 

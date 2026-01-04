@@ -8,21 +8,31 @@ object PacketCache {
     // Key: MessageID (Int), Value: Timestamp
     private val cache = LruCache<Int, Long>(CACHE_SIZE)
 
-    fun hasSeen(messageId: Int): Boolean {
+    /**
+     * Atomically checks if a message has been seen and marks it if not.
+     * Returns true if the message was ALREADY seen (should be dropped).
+     * Returns false if this is the FIRST time seeing it (should be processed).
+     */
+    fun hasSeenAndMark(messageId: Int): Boolean {
         synchronized(cache) {
-            val timestamp = cache.get(messageId) ?: return false
-            // Expire entries older than 30 seconds
-            if (System.currentTimeMillis() - timestamp > EXPIRATION_MS) {
-                cache.remove(messageId)
-                return false
+            val now = System.currentTimeMillis()
+            val timestamp = cache.get(messageId)
+            
+            if (timestamp != null) {
+                // Expire entries older than 30 seconds
+                if (now - timestamp > EXPIRATION_MS) {
+                    cache.remove(messageId)
+                    // Expired, treat as new - mark and return false
+                    cache.put(messageId, now)
+                    return false
+                }
+                // Already seen and not expired
+                return true
             }
-            return true
-        }
-    }
-
-    fun markSeen(messageId: Int) {
-        synchronized(cache) {
-            cache.put(messageId, System.currentTimeMillis())
+            
+            // First time seeing this - mark and return false
+            cache.put(messageId, now)
+            return false
         }
     }
 }

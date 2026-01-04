@@ -161,7 +161,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\mouna\.gradle\cach
 	android:label
 		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:34:9-41
 	android:allowBackup
-		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:33:9-35
+		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:33:9-36
 	android:theme
 		ADDED from C:\Users\mouna\OneDrive\Desktop\bleh\bleh\app\src\main\AndroidManifest.xml:36:9-49
 meta-data#preloaded_fonts

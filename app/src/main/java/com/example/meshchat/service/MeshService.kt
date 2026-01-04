@@ -171,24 +171,50 @@ class MeshService : Service() {
         scope.launch {
             session.chunks[chunkNum.toByte()] = packet.payload
 
-            if (session.chunks.size == totalChunks) {
-                // FIX: Verify ALL chunks 1..N exist before reassembling to prevent null values
-                val allChunksPresent = (1..totalChunks).all { session.chunks[it.toByte()] != null }
-                if (allChunksPresent) {
-                    val fullPayload = (1..totalChunks).map { session.chunks[it.toByte()]!! }.joinToString("")
-                    val finalPacket = packet.copy(payload = fullPayload, ttl = 1)
-                    processCompleteMessage(finalPacket)
-                    incomingChunks.remove(packet.messageId)
+            // Use synchronized block to safely check and prepare, but call suspend function outside
+            var packetToProcess: MeshPacket? = null
+            
+            synchronized(session) {
+                // Check if already processed (another coroutine may have completed first)
+                if (!incomingChunks.containsKey(packet.messageId)) {
+                    return@launch // Already processed and removed
+                }
+                
+                if (session.chunks.size == totalChunks) {
+                    // FIX: Verify ALL chunks 1..N exist before reassembling to prevent null values
+                    val allChunksPresent = (1..totalChunks).all { session.chunks[it.toByte()] != null }
+                    if (allChunksPresent) {
+                        val fullPayload = (1..totalChunks).map { session.chunks[it.toByte()]!! }.joinToString("")
+                        packetToProcess = packet.copy(payload = fullPayload, ttl = 1)
+                        
+                        // Remove BEFORE processing to prevent duplicate calls
+                        incomingChunks.remove(packet.messageId)
+                    }
                 }
             }
+            
+            // Process outside synchronized block (suspend function can't be in critical section)
+            packetToProcess?.let { processCompleteMessage(it) }
         }
     }
 
     private suspend fun processCompleteMessage(packet: MeshPacket) {
         when (packet.type) {
             BleConstants.PACKET_TYPE_MESSAGE -> {
+                // Decrypt the message content with shared key derived from both device IDs
+                val myId = userPrefs.getUserId()
+                val key = com.example.meshchat.crypto.CryptoHelper.deriveKey(myId, packet.senderId)
+                val decryptedContent = try {
+                    com.example.meshchat.crypto.CryptoHelper.decrypt(packet.payload, key, packet.messageId)
+                } catch (e: Exception) {
+                    Log.e("MeshService", "Decryption failed", e)
+                    packet.payload // Fallback to raw payload if decryption fails
+                }
+                
                 val senderName = withContext(Dispatchers.IO) { database.nodeDao().getNodeById(packet.senderId.toString())?.name ?: "Unknown User" }
-                val entity = MessageEntity(senderId = packet.senderId.toString(), senderName = senderName, targetId = packet.targetId.toString(), content = packet.payload, timestamp = System.currentTimeMillis(), isSelf = false, status = MessageStatus.DELIVERED)
+                // FIX: Use deterministic ID to prevent duplicate messages from BLE callbacks
+                val messageUniqueId = "${packet.senderId}:${packet.messageId}"
+                val entity = MessageEntity(id = messageUniqueId, senderId = packet.senderId.toString(), senderName = senderName, targetId = packet.targetId.toString(), content = decryptedContent, timestamp = System.currentTimeMillis(), isSelf = false, status = MessageStatus.DELIVERED)
                 database.messageDao().insertMessage(entity)
             }
             BleConstants.PACKET_TYPE_DISCOVERY -> {
@@ -291,7 +317,11 @@ class MeshService : Service() {
             database.messageDao().insertMessage(entity)
         }
 
-        val packet = MeshPacket(type = BleConstants.PACKET_TYPE_MESSAGE, ttl = 3.toByte(), messageId = messageId, senderId = senderId, targetId = targetId, payload = content)
+        // Encrypt the message content with shared key derived from both device IDs
+        val key = com.example.meshchat.crypto.CryptoHelper.deriveKey(senderId, targetId)
+        val encryptedContent = com.example.meshchat.crypto.CryptoHelper.encrypt(content, key, messageId)
+        
+        val packet = MeshPacket(type = BleConstants.PACKET_TYPE_MESSAGE, ttl = 3.toByte(), messageId = messageId, senderId = senderId, targetId = targetId, payload = encryptedContent)
         splitAndSend(packet)
     }
 
